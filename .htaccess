@@ -1,0 +1,11 @@
+php_value display_errors off
+# Do not remove this line, otherwise mod_rewrite rules will stop working
+RewriteBase /
+<Files site_config.xml>
+Order Allow,Deny
+Deny from all
+</Files>
+<Files *.php>
+Order Allow,Deny
+Allow from all
+</Files>
