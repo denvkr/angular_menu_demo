@@ -1,0 +1,42 @@
+@import "../../../bootstrap/scss/functions";
+@import "../../../bootstrap/scss/variables";
+@import "../../../bootstrap/scss/mixins";
+
+$custom-colors: (
+  "custom-color": #905
+);
+$custom-color: #905;
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+$theme-colors: map-remove($theme-colors, "info", "light", "dark");
+
+$theme-colors: (
+  primary: $black
+);
+.dropdown-menu {
+  @include color-scheme(dark) {
+    // Insert dark mode styles here
+  }
+  display:inline-flexbox !important;
+  }
+
+@import "../../../bootstrap/scss/root";
+@import "../../../bootstrap/scss/reboot";
+@import "../../../bootstrap/scss/type";
+@import "../../../bootstrap/scss/forms";
+@import "../../../bootstrap/scss/grid";
+@import "../../../bootstrap/scss/buttons";
+@import "../../../bootstrap/scss/containers";
+@import "../../../bootstrap/scss/dropdown";
+@import "../../../bootstrap/scss/helpers";
+@import "../../../bootstrap/scss/images";
+@import "../../../bootstrap/scss/navbar";
+@import "../../../bootstrap/scss/nav";
+@import "../../../bootstrap/scss/list-group";
+@import "../../../bootstrap/scss/tooltip";
+@import "../../../bootstrap/scss/button-group";
+@import "../../../bootstrap/scss/popover";
+.bg-light{
+	background-color:$custom-color !important;
+}

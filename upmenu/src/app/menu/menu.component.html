@@ -1,0 +1,61 @@
+<p>menu works!</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown" (click)="onSave()">
+          <a class="nav-link dropdown-toggle" data-toggle="collapse" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"  [attr.aria-expanded]="dropdown_clicked">
+            Dropdown
+          </a>
+          <div *ngIf="dropdown_clicked; then thenBlock else elseBlock"></div>
+			<ng-template #thenBlock>
+			<ul class="dropdown-menu collapse show" aria-labelledby="navbarDropdown" [@openClose]="dropdown_clicked ? 'open' : 'closed'" (@openClose.start)="onAnimationEvent($event)" (@openClose.done)="onAnimationEvent($event)">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul></ng-template>
+			<ng-template #elseBlock></ng-template>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+        <li class="nav-item">
+          <a class="nav-link" href="#" (click)="onLogin();">Login</a>
+        </li>      
+    </div>
+  </div>
+   <app-alarm #al1></app-alarm>
+            <div class="modal fade" role="dialog" tabindex="-1" id="modalinterest">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">{{b2}}</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                        <div class="modal-body">
+                            <form id="PurchaseOfferForm" name="PurchaseOfferForm" formtype="swap">
+                                <div class="form-group"><label class="col-form-label" for="recipient-name">{{t10}}</label><input class="form-control" type="email" id="recipient-name" ng-model-options="{ updateOn: 'blur' }" ng-model="textName" ng-maxlength="100" ng-true-value="true" ng-disabled="dsbl" styler></div>
+                                <div class="form-group"><label class="col-form-label" for="recipient-email">{{t2}}</label><input class="form-control" type="email" id="recipient-email" ng-model-options="{ updateOn: 'blur' }" ng-model="textEmail" ng-maxlength="100" ng-true-value="true" ng-disabled="dsbl" styler></div>
+                                <div class="form-group"><label class="col-form-label" for="message-text">{{t3}}</label><textarea class="form-control" id="message-text" ng-model-options="{ updateOn: 'blur' }" ng-model="textAreaComment" ng-true-value="true" ng-disabled="dsbl" styler></textarea></div>
+							</form>
+						</div>
+                    <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">{{btn1}}</button><button class="btn btn-primary" type="button" ng-click="checkAndSendPurchaseOffer();">{{btn2}}</button></div>
+					</div>
+				</div>
+			</div>
+</nav>
+
